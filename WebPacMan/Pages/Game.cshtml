@@ -1,0 +1,71 @@
+﻿@page
+@using WebPacMan.Models;
+@model WebPacMan.Pages.GameModel;
+@{
+    ViewData["Title"] = "Game";
+}
+<link rel="stylesheet" href="~/css/chat.css" />
+<link rel="stylesheet" href="~/css/map.css" />
+<link rel="stylesheet" href="~/css/AfterGameMenu.css" />
+
+
+<header>
+    <a asp-page="Menu" class="logo"> PacMan </a>
+</header>
+
+<h2 id="score">Press "space" for start</h2>
+<div id="gameMap">
+    @for (int i = 0; i < Model.GetRows; i++)
+    {
+        <div class="gameMap">
+            @for (int j = 0; j < Model.GetColums; j++)
+            {
+                @switch (Model.GetMap[i, j])
+                {
+                    case "#":
+                        <div id="wall_@i-@j" class="wall"></div>
+                        break;
+                    case " ":
+                        <div id="empty_@i-@j" class="empty"><img class="dot_img" style="width:18px;height:18px" src="~/images/empty.png" /></div>
+                        break;
+                    case ".":
+                        <div id="dot_@i-@j" class="dot"><img class="dot_img" style="width:18px;height:18px" src="~/images/point.png" /></div>
+                        break;
+                    case "*":
+                        <div id="dot_@i-@j" class="star"><img class="dot_img" style="width:18px;height:18px" src="~/images/Star.svg.png" /></div>
+                        break;
+                    case "G":
+                        <div id="ghost_G_@i-@j" class="ghost"><img class="ghost_img" src="~/images/ghost_green.png" /></div>
+                        break;
+                    case "B":
+                        <div id="ghost_B_@i-@j" class="ghost"><img class="ghost_img" src="~/images/ghost_black.png" /></div>
+                        break;
+                    case "R":
+                        <div id="ghost_R_@i-@j" class="ghost"><img class="ghost_img" src="~/images/ghost_red.png" /></div>
+                        break;
+                    case "P":
+                        <div id="ghost_P_@i-@j" class="ghost"><img class="ghost_img" src="~/images/ghost_pinck.png" /></div>
+                        break;
+                    case "0":
+                        <div id="pacman_@i-@j" class="pacman"><img id="pacman_img_@i-@j" class="pacman_img" src="~/images/PacMan_right.png" /></div>
+                        break;
+                }
+            }
+        </div>
+    }
+</div>
+
+
+<div id="chat-form">
+    <h1>Chat</h1>
+    <div id="header"></div><br />
+    <div id="inputForm">
+        <input type="text" id="message" />
+        <input type="button" id="sendBtn" value="Отправить" />
+    </div>
+    <div id="chatroom"></div>
+</div>
+
+<script src="js/signalr.min.js"></script>
+<script src="~/js/game.js"></script>
+

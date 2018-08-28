@@ -1,0 +1,20 @@
+﻿@page
+@model WebPacMan.Pages.MenuModel
+@{
+    ViewData["Title"] = "Menu";
+}
+<header>
+    <a asp-page="Menu" class="logo"> PacMan </a>
+</header>
+
+<div id="login-form">
+    <h1>Menu</h1>
+    <fieldset>
+        <form method="post">
+            <input type="submit" asp-page-handler="Game" value="Game">
+            <input type="submit" asp-page-handler="HightScores" value="High/ Scores">
+            <input type="submit" asp-page-handler="Rules" value="Rules">
+            <input type="submit" asp-page-handler="About" value="About">
+        </form>
+    </fieldset>
+</div>

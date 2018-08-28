@@ -1,0 +1,40 @@
+﻿@page
+@model WebPacMan.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<header>
+    <a asp-page="Index" class="logo"> PacMan </a>
+</header>
+
+<div id="login-form">
+    <h1>Sign in</h1>
+    <fieldset>
+        <form method="post">
+            <div>
+                <div>
+                    <label asp-for="User.Email">Email:</label><br />
+                    <input type="email" asp-for="User.Email" />
+                    <span asp-validation-for="User.Email" />
+                </div>
+                <div>
+                    <label asp-for="User.Password">Password:</label><br />
+                    <input type="password" asp-for="User.Password" />
+                    <span asp-validation-for="User.Password" />
+                </div>
+                <div>
+                    <a asp-page="Registaration"> Registration </a>
+                </div>
+                <div>
+                    <input type="submit" asp-page-handler="Regsteration" value="Continue">
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</div>
+
+
+
+
+

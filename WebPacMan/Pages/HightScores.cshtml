@@ -1,0 +1,40 @@
+﻿@page
+@model WebPacMan.Pages.HightScoresModel
+@{
+    ViewData["Title"] = "High Scores";
+}
+
+<link rel="stylesheet" href="~/css/HightScore.css" />
+
+<header>
+    <a asp-page="Menu" class="logo"> PacMan </a>
+</header>
+
+<div id="hightscore-form">
+    <h1>High Scores</h1>
+    <fieldset>
+        <form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nick</th>
+                        <th>Score</th>
+                    </tr>
+                <tbody>
+                    @foreach (var user in Model.Users)
+                    {
+                        <tr>
+                            <td>@user.NickName</td>
+                            <td>@user.Score</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </form>
+    </fieldset>
+</div>
+
+
+
+

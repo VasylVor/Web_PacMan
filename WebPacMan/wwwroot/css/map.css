@@ -1,0 +1,44 @@
+﻿
+.gameMap {
+    display: flex;
+}
+.wall {
+    width: 30px;
+    height: 30px;
+    background-color: darkblue
+}
+.empty {
+    width: 30px;
+    height: 30px;
+    background-color: grey
+}
+.dot {
+    width: 30px;
+    height: 30px
+}
+.star {
+    width: 30px;
+    height: 30px;
+    background-color: grey
+}
+.ghost {
+    width: 30px;
+    height: 30px;
+}
+.pacman {
+    width: 30px;
+    height: 30px;
+}
+.pacman_img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+}
+.ghost_img {
+    width: 18px;
+    height: 18px
+}
+.dot_img {
+    width: 18px;
+    height: 18px
+}
